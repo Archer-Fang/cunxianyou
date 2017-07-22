@@ -1,0 +1,58 @@
+{
+  "_args": [
+    [
+      "file-manager-js@git+https://github.com/itexussoft/file-manager-js.git",
+      "/Users/zhouqy/Downloads/file-manager-js-master/demo"
+    ]
+  ],
+  "_from": "git+https://github.com/itexussoft/file-manager-js.git",
+  "_id": "file-manager-js@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/file-manager-js",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/itexussoft/file-manager-js/master/package.json",
+      "gitUrl": "git://github.com/itexussoft/file-manager-js.git",
+      "httpsUrl": "git+https://github.com/itexussoft/file-manager-js.git",
+      "shortcut": "github:itexussoft/file-manager-js",
+      "ssh": "git@github.com:itexussoft/file-manager-js.git",
+      "sshUrl": "git+ssh://git@github.com/itexussoft/file-manager-js.git",
+      "type": "github"
+    },
+    "name": "file-manager-js",
+    "raw": "file-manager-js@git+https://github.com/itexussoft/file-manager-js.git",
+    "rawSpec": "git+https://github.com/itexussoft/file-manager-js.git",
+    "scope": null,
+    "spec": "git+https://github.com/itexussoft/file-manager-js.git",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/itexussoft/file-manager-js.git#2f62519183ce5980563502b1e23f2f232fa9b6d7",
+  "_shasum": "04ab52d99ec9d71cc606ff9c86c139b9e94be913",
+  "_shrinkwrap": null,
+  "_spec": "file-manager-js@git+https://github.com/itexussoft/file-manager-js.git",
+  "_where": "/Users/zhouqy/Downloads/file-manager-js-master/demo",
+  "author": "",
+  "dependencies": {
+    "escape-html": "^1.0.3",
+    "skipper": "^0.5.9",
+    "xml": "^1.0.1"
+  },
+  "description": "Nodejs implementation of FileManager in CKEditor",
+  "devDependencies": {},
+  "gitHead": "a2de3aa0b947ca31943907a8ca2922e69b9340f9",
+  "license": "ISC",
+  "main": "browser.js",
+  "name": "file-manager-js",
+  "optionalDependencies": {},
+  "readme": "# file-manager-js\nNodejs implementation of FileManager in CKEditor\n",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}

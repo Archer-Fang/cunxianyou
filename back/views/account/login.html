@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="浙江省急救指挥中心后台管理系统">
+    <!-- CSS -->
+    <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/main.css" rel="stylesheet" type="text/css">
+
+    <!--[if lte IE 9]>
+    <link href="/vendors/bootstrap/css/main-ie.css" rel="stylesheet" type="text/css"/>
+    <link href="/vendors/bootstrap/css/main-ie-part2.css" rel="stylesheet" type="text/css"/>
+
+    <![endif]-->
+    <link href="/back/css/dt-login.css?v=<%=randomStr%>" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/back/img/favicon.ico">
+</head>
+<body onLoad="checkUsername()">
+<div class="login-bg">
+    <div class="logo">
+
+        <div class="dt-login-logo">
+            浙江省急救指挥中心后台管理系统
+        </div>
+        <!--<span></span><img src="/vendors/bootstrap/img/pic_logo.png">-->
+    </div>
+
+    <div class="login-page login-page-img"></div>
+    <div class="login-page">
+        <div class="title">后台登录</div>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="userName" class="control-label sr-only">userName</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="用户名">
+                        <span class="input-group-addon"><img src="/vendors/bootstrap/img/ic_user.png"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="control-label sr-only">Password</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+                        <span class="input-group-addon"><img src="/vendors/bootstrap/img/ic_password.png"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div>
+                        <img class="checked" src="/vendors/bootstrap/img/btn_nocheck.png">
+                        <img class="checked hide" src="/vendors/bootstrap/img/btn_check.png">
+                    </div>
+                    <div>&nbsp;记住我</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="button" id="btnSubmit" class="login-btn" value="登录" onclick="login()">
+                </div>
+            </div>
+            <div class="forget" style="cursor: pointer;display: none">忘记密码?</div>
+        </form>
+    </div>
+    <footer class="footer">&copy; 2017  浙江省急救指挥中心 后台管理系统 网站版权所有</footer>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="loginModalLabel">提示</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+</body>
+
+<!-- Javascript -->
+<script  src="/vendors/bootstrap/js/jquery/jquery-2.1.0.min.js"></script>
+<script  src="/vendors/bootstrap/js/bootstrap/bootstrap.min.js"></script>
+<script src="/vendors/bootstrap/js/plugins/modernizr/modernizr.js"></script>
+<script src="/back/js/common/dt-constant.js"></script>
+<script src="/dreamtouch/js/dt-helper.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--记住账号-->
+<script src="/back/js/common/dt-login.js?v=<%=randomStr%>"></script>
+</html>

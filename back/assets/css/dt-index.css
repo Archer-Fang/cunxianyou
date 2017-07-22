@@ -1,0 +1,202 @@
+.logo {
+    top: 0 !important;
+    height: 34px;
+}
+
+.logo span {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img {
+    vertical-align: middle;
+    height:35px;
+}
+
+footer {
+    padding: 10px;
+    font-size: 0.9em;
+    /*margin-left: 230px;*/
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 230px;
+    text-align: center;
+    background: #FAF8F9;
+}
+
+a {
+    cursor: pointer;
+}
+
+.nav-active {
+    font-weight: bold;
+}
+
+.content-error {
+    margin-top: 5px;
+    color: #a94442;
+    display: none;
+}
+
+.content-error-display {
+    display: block;
+}
+
+.edition {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-menu {
+    margin-bottom: 50px;
+}
+
+.initial {
+    text-align: center;
+}
+.initial img{
+    width: 60%;
+}
+
+.content-wrapper {
+
+    background-color: #faf8f9 !important;
+}
+
+#top-content > li {
+    text-align: center;
+
+    padding: 10px 0;
+
+}
+
+.mini-bar-chart {
+    color: #30bfe1;
+    font-size: 18px;
+}
+
+.top-title {
+    background-color: #30bfe1;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+#top-content {
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+}
+
+
+.no-waiting-data {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+}
+
+.no-waiting-data > li {
+    text-align: center;
+}
+/*@XT*/
+/*@2017年2月14日*/
+/*上传附件的bug*/
+.progress.active .progress-bar {
+    animation: none !important;
+}
+
+.progress-bar {
+    transition: none !important;
+    /*opacity: 0 !important;*/
+}
+
+.progress-bar.active {
+    animation: none !important;
+}
+
+/*上传附件页面隐藏原始的上传框*/
+#upload-input, .upload-input {
+    display: none !important;
+}
+
+.dt-progress-box {
+    opacity: 0;
+}
+
+.progress {
+    margin-bottom: 0;
+}
+
+.dt-progress-active {
+    opacity: 1;
+}
+
+.dt-video-box {
+    display: block;
+}
+
+.dt-pdf-box {
+    display: none
+}
+
+/*转圈圈模态窗样式*/
+.modal-circle {
+    margin: 140px auto;
+}
+
+.modal-circle .modal-content {
+    height: 150px;
+}
+
+.modal-circle .modal-content img {
+    height: 30px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.modal-circle .modal-content .modal-body-title {
+    line-height: 85px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th
+{
+    vertical-align: middle;
+}
+.project-list > tbody > tr > td
+{
+    padding: 4px;
+}
+
+
+.sr-only
+{
+    position: absolute;
+    width: 500px;
+    top: 0;
+    font-size: 20px;
+    color: white;
+    line-height: 34px;
+    height: 34px;
+    clip:auto;
+    margin: 0;
+}
+
+.has-feedback .form-control
+{
+    padding-right: 10px;
+}
+.form-horizontal .control-label
+{
+    padding-right: 0;
+}
+.help-block
+{
+    font-size: 12px;
+}
+
+.dt-input-require::before
+{
+    content: "* ";
+    color:red;
+}

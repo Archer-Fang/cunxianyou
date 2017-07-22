@@ -1,0 +1,118 @@
+.login-bg{
+    width: 100%;
+    height: 100%;
+    background: url("/back/project/img/login_bg.jpg") no-repeat;
+    background-size:cover;
+}
+.logo{
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+}
+.logo span{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo img{
+    height: 35px;
+    margin-left: 50px;
+    vertical-align: middle;
+}
+.login-page{
+
+    background-color: rgba(255,255,255,1);
+    border-radius: 5px;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 70%;
+
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -140px;
+}
+.title{
+    font-size: 20px;
+    color: #13a084;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-weight: bold;
+}
+.input-group{
+    height: 30px;
+}
+.form-horizontal{
+    width: 90%;
+    margin: 0 auto;
+}
+.form-control{
+    height: 40px;
+    border-bottom-left-radius: 5px!important;
+    border-top-left-radius: 5px!important;
+}
+.input-group-addon{
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.input-group-addon img{
+    width: 18px;
+    height: 20px;
+}
+.hide{
+    display: none;
+}
+.login-btn{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #13a084;
+    color: #ffffff;
+}
+.code-btn{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #13a084;
+    color: #ffffff;
+}
+.forget{
+    color: #13a084;
+    text-align: center;
+}
+.footer{
+    color: #ffffff;
+}
+.checked{
+    float: left;
+}
+.dt-login-logo
+{
+    height: 50px;
+    line-height: 50px;
+    color: #13a084;
+    font-size: 24px;
+    text-indent: 45px;
+    background: url("/back/project/img/pic_login_logo.png");
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position-x: left;
+    background-position-y: center;
+    margin-left: 20px;
+}
+
+.login-page-img
+{
+    width: 500px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -250px;
+    left:30%;
+    background-image: url("/back/project/img/pic_login_mountain.png");
+    background-color: rgba(0,0,0,0);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

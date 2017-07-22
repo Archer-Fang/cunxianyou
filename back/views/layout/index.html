@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>浙江省急救指挥中心后台管理系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="author" content="杭州触梦智能科技有限公司">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+
+
+    <!-- CSS -->
+    <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/main.css" rel="stylesheet" type="text/css">
+
+    <link href="/vendors/bootstrap/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendors/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 9]>
+    <link href="/vendors/bootstrap/css/main-ie.css" rel="stylesheet" type="text/css"/>
+    <link href="/vendors/bootstrap/css/main-ie-part2.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/vendors/hightcharts/css/highcharts.css">
+
+    <link rel="stylesheet" href="/vendors/pager/css/paging.css?v=<%=randomStr%>">
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/back/img/favicon.ico">
+    <link rel="stylesheet" href="/back/css/dt-index.css?v=<%=randomStr%>">
+</head>
+<body class="sidebar-fixed topnav-fixed dashboard main-body" style="background-color: #f4f5f7;">
+<form class="form-horizontal" role="form">
+    <!-- WRAPPER -->
+    <div id="wrapper" class="wrapper">
+        <!-- TOP BAR -->
+        <div class="top-bar navbar-fixed-top">
+            <div class="container">
+                <div class="clearfix">
+                    <a href="#" class="pull-left toggle-sidebar-collapse"><i class="fa fa-bars"></i></a>
+                    <!-- logo -->
+                    <div class="pull-left left logo">
+                        <span></span>
+                        <img src="/back/img/logo_white.png"/>
+                    </div>
+                    <!-- end logo -->
+                    <div class="pull-right right">
+                        <!-- top-bar-right -->
+                        <div class="top-bar-right">
+                            <!-- logged user and the menu -->
+                            <div class="logged-user">
+                                <div class="btn-group">
+
+                                    <a href="#" class="btn btn-link "> <i class="glyphicon glyphicon-user"></i>
+                                        <span class="name">{{manager_real_name}} </span>
+                                    </a>
+                                    <a href="/login/logout" class="btn btn-link ">
+                                        <i class="fa fa-power-off"></i>
+                                        <span class="text name">退出</span>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <!-- end logged user and the menu -->
+                        </div>
+                        <!-- end top-bar-right -->
+                    </div>
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- END TOP BAR -->
+        <!-- LEFT SIDEBAR -->
+        <div id="left-sidebar" class="left-sidebar ">
+            <!-- main-nav -->
+            <div class="sidebar-scroll">
+                <nav class="main-nav">
+                    <ul class="main-menu">
+
+                        {{#each list}}
+                        <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-navicon"></i><span class="text">{{column_title}} <span class="badge element-bg-color-blue"></span></span>
+                            <i class="toggle-icon fa fa-angle-left"></i></a>
+                            <ul class="sub-menu " >
+                                {{#each column_list}}
+                                <li onclick="loadPage('{{back_link_url}}?columnId={{column_id}}&fromMenu=1')"><a><span class="text">{{column_title}}</span></a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </nav>
+                <!-- /main-nav -->
+            </div>
+        </div>
+        <!-- END LEFT SIDEBAR -->
+        <!-- MAIN CONTENT WRAPPER -->
+        <div id="main-content-wrapper" class="content-wrapper ">
+            <div class="initial">
+                <img src="/back/img/pic_welcome.png"/>
+            </div>
+            <div class="edition"></div>
+
+
+        </div>
+
+        <!-- /main -->
+        <!-- FOOTER -->
+        <footer>
+            &copy; 2017 浙江省急救指挥中心 网站版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前版本号V1.0.0
+        </footer>
+        <!-- END FOOTER -->
+    </div>
+</form>
+<!-- END CONTENT WRAPPER -->
+<!-- END WRAPPER -->
+<!--有关闭按钮-->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="confirmModalLabel">提示信息</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="confirm">确认</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--有关闭按钮-->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="messageModalLabel">提示信息</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--没有关闭按钮-->
+<div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="tipsModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="tipsModalLabel">提示信息</h4>
+            </div>
+            <div class="modal-body"  style="height:80px;"></div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--转圈圈model-->
+<div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-circle">
+        <div class="modal-content" style="height: 80px;">
+
+            <img src="/vendors/bootstrap/img/loadingImg.gif">
+            <label class="modal-body-title">&nbsp;&nbsp;&nbsp;数据加载中......</label>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+</body>
+<!-- Javascript -->
+<script  src="/vendors/bootstrap/js/jquery/jquery-2.1.0.min.js"></script>
+<script  src="/vendors/bootstrap/js/bootstrap/bootstrap.min.js"></script>
+<script src="/vendors/bootstrap/js/plugins/bootstrap-tour/bootstrap-tour.custom.js"></script>
+<script src="/vendors/bootstrap/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/vendors/bootstrap/js/king-common.js"></script>
+<script src="/vendors/bootstrap/js/bootstrap/bootstrapValidator.min.js"></script>
+<script src="/vendors/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/vendors/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/vendors/bootstrap/js/zh_CN.js"></script>
+<script src="/vendors/underscore/js/underscore-min.js"></script>
+
+
+<script src="/vendors/hightcharts/js/highcharts.js"></script>
+
+<script src="/vendors/pager/js/query.js?v=<%=randomStr%>"></script>
+<script src="/vendors/pager/js/paging.js?v=<%=randomStr%>"></script>
+
+
+<script src="/dreamtouch/js/dt-helper.js?v=<%=randomStr%>"></script>
+<script src="/back/js/common/dt-constant.js?v=<%=randomStr%>"></script>
+
+<script src="/back/js/common/dt-index.js?v=<%=randomStr%>"></script>
+<!--[if lt IE 9]>
+<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+</html>
